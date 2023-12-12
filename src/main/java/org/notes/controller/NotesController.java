@@ -45,7 +45,7 @@ public class NotesController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Note> upsert(@PathVariable("id") String id) {
+    public ResponseEntity<Note> updateOrInsert(@PathVariable("id") String id) {
         return new ResponseEntity<Note>(notesService.delete(id), HttpStatus.OK);
     }
 }
