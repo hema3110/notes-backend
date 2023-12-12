@@ -43,4 +43,9 @@ public class NotesController {
     public ResponseEntity<Note> delete(@PathVariable("id") String id) {
         return new ResponseEntity<Note>(notesService.delete(id), HttpStatus.OK);
     }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<Note> upsert(@PathVariable("id") String id) {
+        return new ResponseEntity<Note>(notesService.delete(id), HttpStatus.OK);
+    }
 }
