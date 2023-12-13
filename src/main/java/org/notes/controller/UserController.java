@@ -38,19 +38,4 @@ public class UserController {
         return new ResponseEntity<User>(userService.update(id, request.getFirstName(), request.getLastName(), request.getEmail(), request.getMobileNumber()), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<User> info(@PathVariable("id") String id) {
-        return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<User> information(@PathVariable("id") String id) {
-        return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<User> upsert(@PathVariable("id") String id) {
-        return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
-    }
-
 }
