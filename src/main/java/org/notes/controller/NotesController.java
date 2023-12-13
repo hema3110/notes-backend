@@ -40,7 +40,7 @@ public class NotesController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Note> delete(@PathVariable("id") String id) {
+    public ResponseEntity<Note> deleteOrInsert(@PathVariable("id") String id) {
         return new ResponseEntity<Note>(notesService.delete(id), HttpStatus.OK);
     }
 
