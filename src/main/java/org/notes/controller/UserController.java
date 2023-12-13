@@ -28,13 +28,18 @@ public class UserController {
         return new ResponseEntity<List<User>>(userService.findAll(), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<User> delete(@PathVariable("id") String id) {
+        return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<User> update(@PathVariable("id") String id,@RequestBody @Valid UserRequest request) {
         return new ResponseEntity<User>(userService.update(id, request.getFirstName(), request.getLastName(), request.getEmail(), request.getMobileNumber()), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<User> delete(@PathVariable("id") String id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<User> info(@PathVariable("id") String id) {
         return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
     }
 
