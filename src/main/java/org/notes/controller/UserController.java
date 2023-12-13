@@ -44,6 +44,11 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    public ResponseEntity<User> information(@PathVariable("id") String id) {
+        return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
     public ResponseEntity<User> upsert(@PathVariable("id") String id) {
         return new ResponseEntity<User>(userService.delete(id), HttpStatus.OK);
     }
