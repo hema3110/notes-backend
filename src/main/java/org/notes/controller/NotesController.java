@@ -43,4 +43,9 @@ public class NotesController {
     public ResponseEntity<Note> delete(@PathVariable("id") String id) {
         return new ResponseEntity<Note>(notesService.delete(id), HttpStatus.OK);
     }
+
+    @GetMapping("/all/active")
+    public ResponseEntity<List<Note>> findAllActive() {
+        return new ResponseEntity<>(notesService.findAllActive(), HttpStatus.OK);
+    }
 }
