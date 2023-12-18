@@ -74,4 +74,13 @@ public class NoteService {
             return note.get();
         throw new EntityNotFoundException("Note not found!");
     }
+
+    public List<Note> findAllActive() {
+        try {
+            return noteRepository.findAllByIsActiveTrue();
+        } catch (Exception ex) {
+            log.error(ex.getMessage(), ex);
+        }
+        return new ArrayList<>();
+    }
 }
